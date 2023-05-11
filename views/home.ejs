@@ -1,0 +1,15 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+<p> <%= startingContent %></p>
+<%# for(let i=0; i< posts.length;i++){  %>
+    <!-- <h2><%#= posts[i].titleMessage %></h2> -->
+    <!-- <p><%#= posts[i].postMessage %> </p> -->
+<%# } %>
+
+<% posts.forEach(function(post){ %>
+    <h2><%= post.titleMessage %></h2>               <!-- Alternate to for loop -->
+    <p><%= post.postMessage.substring(0,120)+" ..." %> <a href="/posts/<%= post.titleMessage %>">Read more</a> </p>
+<% }) %>
+
+<%- include("partials/footer") -%>
